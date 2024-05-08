@@ -59,6 +59,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',  # For token authentication
         'rest_framework.authentication.SessionAuthentication',  # Optionally, you can also include session authentication
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
 

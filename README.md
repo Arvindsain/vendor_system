@@ -7,9 +7,12 @@ This is a Django REST framework project for managing vendors, purchase orders, a
 # to generate superuser token for apis.
 ```bash
 python manage.py createsuperuser
-
-python manage.py drf_create_token <username> # use superuser username
 ```
+## Token api:
+  - Method: POST
+  - URL: `/api/token/`
+  - Payload: Provide superuser detail like username and password details in the request body.
+  - Once Token is created or received provide it to HEADER with key as Authorization (eg. key : Authorization) and value as token
 
 ## Setup Instructions
 
@@ -17,7 +20,7 @@ python manage.py drf_create_token <username> # use superuser username
 
 ```bash
 git clone https://github.com/Arvindsain/vendor_system.git
-cd vendor_management_system
+cd vendor_system
 ```
 
 ### 2. Create a Virtual Environment
@@ -49,6 +52,7 @@ pip install -r requirements.txt
 ### 5. Apply Migrations
 
 ```bash
+cd project
 python manage.py migrate
 ```
 
@@ -57,9 +61,6 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
-
-Visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to view the API.
-
 ## API Endpoints
 
 ### 1. Vendor Profile Management

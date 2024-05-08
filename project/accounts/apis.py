@@ -1,7 +1,8 @@
 import django_filters
-from .models import Vendor, HistoricalPerformance
-from .serializers import VendorSz, HistoricalPerformanceSz
 from .permissions import IsSuperuser
+from .models import Vendor, HistoricalPerformance
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from .serializers import VendorSz, HistoricalPerformanceSz
 from rest_framework import viewsets, response, decorators
 
 class VendorFilter(django_filters.FilterSet):
@@ -14,6 +15,7 @@ class VendorFilter(django_filters.FilterSet):
 
 class VendorViewSet(viewsets.ModelViewSet):
     serializer_class = VendorSz
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsSuperuser]
     filterset_class = VendorFilter
 

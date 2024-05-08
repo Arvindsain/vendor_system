@@ -4,6 +4,7 @@ from .models import PurchaseOrder
 from .serializers import PurchaseOrderSz
 from accounts.permissions import IsSuperuser
 from rest_framework import viewsets, decorators, response
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 class PurchaseOrderFilter(django_filters.FilterSet):
     class Meta:
@@ -16,6 +17,7 @@ class PurchaseOrderFilter(django_filters.FilterSet):
 
 class PurchaseOrderViewSet(viewsets.ModelViewSet):
     serializer_class = PurchaseOrderSz
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsSuperuser]
     filterset_class = PurchaseOrderFilter
 
