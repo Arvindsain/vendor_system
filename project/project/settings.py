@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "accounts",
+    "purchase_order",
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'project.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # For token authentication
+        'rest_framework.authentication.SessionAuthentication',  # Optionally, you can also include session authentication
+    ],
+}
 
 TEMPLATES = [
     {
