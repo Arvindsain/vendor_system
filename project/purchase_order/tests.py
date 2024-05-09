@@ -55,7 +55,6 @@ class PurchaseOrderModelTestCase(TestCase):
             data=data,
             format="json"
         )
-        breakpoint()
         assert resp.status_code == 201
         assert resp.data["po_number"] is not None # po_number is auto created.
         self.purchase_id = resp.data["id"]
