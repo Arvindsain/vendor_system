@@ -8,7 +8,7 @@ router.register(r"api/vendors", VendorViewSet, basename="vendors")
 router.register(r"vendor/historical_performance", HistorialPerformanceViewSet, basename="endor_historical_performance")
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path("", include(router.urls)),
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]

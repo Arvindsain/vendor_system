@@ -128,3 +128,9 @@ python manage.py runserver
   - Method: POST
   - URL: `/api/purchase_orders/{po_id}/acknowledge/`
   - This endpoint will update acknowledgment_date and trigger the recalculation of average_response_time 
+
+# To run test cases:
+```bash
+cd project
+python manage.py test
+```

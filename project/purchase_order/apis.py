@@ -31,7 +31,7 @@ class PurchaseOrderViewSet(viewsets.ModelViewSet):
             if not perchase_order.acknowledgment_date:
                 perchase_order.acknowledgment_date = timezone.now()
                 perchase_order.save()
-                return response.Response({'status': 'Acknowledged successfully'})
+                return response.Response({"message": "Acknowledged successfully"})
 
         except PurchaseOrder.DoesNotExist:
             return response.Response({"error": "PurchaseOrder not found in system."})
