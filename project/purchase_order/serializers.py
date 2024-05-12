@@ -17,7 +17,7 @@ class PurchaseOrderSz(serializers.ModelSerializer):
             "issue_date",
             "acknowledgment_date",
         )
-        read_only = (
+        read_only_fields = (
             "po_number",
             "acknowledgment_date",
         )
